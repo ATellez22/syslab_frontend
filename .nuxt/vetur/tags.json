@@ -2,6 +2,9 @@
   "AdminTemplate": {
     "description": "Auto imported from components/AdminTemplate.vue"
   },
+  "JcLoader": {
+    "description": "Auto imported from components/JcLoader.vue"
+  },
   "BaseAside": {
     "description": "Auto imported from components/base/Aside.vue"
   },

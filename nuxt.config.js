@@ -1,5 +1,5 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // Cabeceras globales de la pagina: https://go.nuxtjs.dev/config-head
   head: {
     title: 'test',
     htmlAttrs: {
@@ -30,26 +30,26 @@ export default {
       { src:"/assets/js/plugins/chartjs.min.js" },
     ],
   },
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  // CSS Global: https://go.nuxtjs.dev/config-css
   css: [
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // Complementos para ejecutar antes de renderizar la página: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/api'
   ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  // Componentes de importación automática: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  // Módulos para desarrollo y compilación (recomendado): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  // Modulos: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios'],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // Configuración de compilación: https://go.nuxtjs.dev/config-build
   build: {
   }
 }

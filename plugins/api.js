@@ -1,16 +1,39 @@
 export default function ({ $axios }, inject) {
-  // Create a custom axios instance
+  // Crear instancia personalizada de Axios.
   const api = $axios.create({
     headers: {
       common: {
-        Accept: 'text/plain, */*'
-      }
-    }
-  })
+        Accept: "text/plain, */*",
+      },
+    },
+  });
 
-  // Set baseURL to something different
-  api.setBaseURL('http://127.0.0.1:8000/api/')
+  // Establezca URL base
+  api.setBaseURL("http://127.0.0.1:8000/api/");
 
-  // Inject to context as $api
-  inject('api', api)
+  // Inyectar contexto como $api
+  inject("api", api);
+
+  /*
+  Este plugin se obtiene de la pagina: https://axios.nuxtjs.org/usage
+  */
+
+  /*
+  Se debe instalar primeramente:
+
+  - npm install @nuxtjs/axios
+  - yarn add @nuxtjs/axios
+
+  */
+
+  /*
+  En 'nuxt.config' se debe establecer:
+
+   plugins: [
+    '~/plugins/api'
+   ],
+
+   modules: ['@nuxtjs/axios'],
+
+  */
 }

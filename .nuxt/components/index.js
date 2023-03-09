@@ -1,4 +1,5 @@
 export { default as AdminTemplate } from '../../components/AdminTemplate.vue'
+export { default as JcLoader } from '../../components/JcLoader.vue'
 export { default as BaseAside } from '../../components/base/Aside.vue'
 export { default as BaseFooter } from '../../components/base/Footer.vue'
 export { default as BaseNavbar } from '../../components/base/Navbar.vue'
