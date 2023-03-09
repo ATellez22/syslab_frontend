@@ -1,7 +1,7 @@
 <template>
   <div>
     <AdminTemplate>
-      <div slot="body">H3</div>
+      <div slot="body">{{ip}}</div>
     </AdminTemplate>
   </div>
 </template>
@@ -17,5 +17,21 @@ export default {
     };
   },
   components: { AdminTemplate },
-};
+  data() {
+    return {
+      ip: {}
+    }
+  },
+  methods: {
+    async fetchSomething() {
+      const ip = await this.$api.$get("categories");
+      this.ip = ip; //Guardar resultado en una variable de 'data'.
+    },
+  },
+  mounted() {
+    this.$nextTick(async () => { //Esperar para ejecutar la funcion.
+        await this.fetchSomething()
+    })
+  }
+}
 </script>
