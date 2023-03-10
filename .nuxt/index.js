@@ -13,6 +13,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_plugin_0112f269 from 'nuxt_plugin_plugin_0112f269' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_vuesweetalert2_86a33c54 from 'nuxt_plugin_vuesweetalert2_86a33c54' // Source: ./vue-sweetalert2.js (mode: 'client')
 import nuxt_plugin_axios_4886b2ff from 'nuxt_plugin_axios_4886b2ff' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_api_5e4622e4 from 'nuxt_plugin_api_5e4622e4' // Source: ../plugins/api (mode: 'all')
 
@@ -182,6 +183,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_0112f269 === 'function') {
     await nuxt_plugin_plugin_0112f269(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuesweetalert2_86a33c54 === 'function') {
+    await nuxt_plugin_vuesweetalert2_86a33c54(app.context, inject)
   }
 
   if (typeof nuxt_plugin_axios_4886b2ff === 'function') {

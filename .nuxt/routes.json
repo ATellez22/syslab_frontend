@@ -7,6 +7,13 @@
     "_name": "_7d6f9066"
   },
   {
+    "name": "update-id",
+    "path": "/update/:id?",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/update/_id.vue",
+    "chunkName": "pages/update/_id",
+    "_name": "_159a66d7"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/index.vue",
