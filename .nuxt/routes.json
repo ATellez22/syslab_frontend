@@ -1,5 +1,12 @@
 [
   {
+    "name": "new",
+    "path": "/new",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/new.vue",
+    "chunkName": "pages/new",
+    "_name": "_7d6f9066"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/index.vue",

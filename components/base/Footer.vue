@@ -6,10 +6,10 @@
           <div class="copyright text-center text-sm text-muted text-lg-start">
             © 2022 , made with <i class="fa fa-heart"></i> by
             <a
-              href="https://www.creative-tim.com"
+              href="#"
               class="font-weight-bold"
               target="_blank"
-              >Creative Tim</a
+              >Syslab</a
             >
             for a better web.
           </div>
@@ -20,10 +20,10 @@
           >
             <li class="nav-item">
               <a
-                href="https://www.creative-tim.com"
+                href="#"
                 class="nav-link text-muted"
                 target="_blank"
-                >Creative Tim</a
+                >Syslab</a
               >
             </li>
             <li class="nav-item">
