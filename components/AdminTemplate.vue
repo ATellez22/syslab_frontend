@@ -8,6 +8,7 @@
       <Navbar />
 
       <div class="container-fluid py-4">
+        <!-- Slot similar al de Laravel para añadir contenido -->
         <slot name="body" />
         <Footer />
       </div>

@@ -22,6 +22,7 @@
                   </thead>
                   <tbody>
                     <!-- Recorrido con 'v-for', como mejor alternativa a 'map' en React/Next -->
+                    <!-- Se recorre la lista generada por la promesa y trasferida a la data 'List' -->
                     <tr v-for="(elemento, indice) in list">
                       <td class="py-0 px-1">{{ elemento.id }}</td>
                       <td class="py-0 px-1">{{ elemento.description }}</td>
@@ -74,6 +75,7 @@ export default {
     return {
       load: true, //Variable de carga que se establece como 'true' y que se utiliza en el componente de 'JcLoader'
       list: {}, //Variable de objeto que contendra los datos solicitados con la api de axios.
+      apiUrl: "categories",
     };
   },
   methods: {
@@ -92,8 +94,8 @@ export default {
         this.load = true;
         const res = await this.$api.$delete("categories/" + id);
         //Al recargar la pagina
-        await Promise.all([this.GET_DATA("categories")]).then((position) => {
-          //La promesa resuelta 'v' se trasfiere a 'list' desde su primer valor '0'.
+        await Promise.all([this.GET_DATA(this.apiUrl)]).then((position) => {
+          //La promesa resuelta 'position' se trasfiere a 'list' desde su primer valor '0'.
           this.list = position[0];
         });
       } catch (error) {
@@ -132,6 +134,9 @@ export default {
   },
   mounted() {
     //Esperar para ejecutar la funcion. No funciona sin 'mounted()'.
+
+    //Una forma de asegurarse de que 'Vue' ya ha renderizado todos los elementos del DOM es usar la función nextTick.
+    //La función nextTick lo que hace es dejar pasar un pequeño intervalo de tiempo, el correspondiente a un tick.
     this.$nextTick(async () => {
       /*
         - Variable Promise: Representa la finalización de una operación asíncrona.

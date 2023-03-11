@@ -19,30 +19,23 @@
               </div>
 
               <div class="card-body">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label for="description"></label>
+                <!-- Llamado al componente de forma diferente? -->
+                <!-- Sin el prop 'model' no se envian los datos -->
+                <CrudUpdate :model="model" :apiUrl="apiUrl">
+                  <!-- Rellenando el slot del componente Create -->
+                  <div slot="body" class="row">
+                    <div class="form-group col-12">
+                      <label for="">Descripcion</label>
                       <input
                         type="text"
                         name="description"
                         id="description"
-                        class="form-control"
                         v-model="model.description"
+                        class="form-control"
                       />
                     </div>
                   </div>
-                  <div class="col-6">
-                    <button class="btn btn-info w-100" @click="$router.back()">
-                      Volver
-                    </button>
-                  </div>
-                  <div class="col-6">
-                    <button class="btn btn-dark w-100" @click="Save()">
-                      Actualizar
-                    </button>
-                  </div>
-                </div>
+                </CrudUpdate>
               </div>
             </div>
           </div>
@@ -65,6 +58,7 @@ export default {
       title: "Index",
     };
   },
+
   components: { AdminTemplate, JcLoader },
   data() {
     return {
@@ -73,8 +67,10 @@ export default {
       model: {
         description: "",
       },
+      apiUrl: "categories",
     };
   },
+
   methods: {
     async GET_DATA(path) {
       const res = await this.$api.$get(path);
@@ -82,42 +78,6 @@ export default {
       console.log(res);
     },
 
-    //No se escribe toda la ruta gracias a la configuracion en 'plugins/api'.
-    //API modo POST para guardar datos.
-    async Save() {
-      try {
-        //Habilitar carga de pagina
-        this.load = true;
-        const res = await this.$api.$put("categories/" + this.model.id, this.model);
-
-        //Sweet-alert2
-        /*
-          Se instala con 'npm install -S vue-sweetalert2'
-
-          Se configura en el nuxt.config añadiendo en modules: 'vue-sweetalert2/nuxt'
-      */
-
-        this.$swal
-          .fire({
-            title: "Actualizado",
-            showDenyButton: false,
-            showCancelButton: false,
-            confirmButtonText: "Ok",
-          })
-          .then((result) => {
-            if (result.isConfirmed) {
-              //this.$swal.fire("Guardado correctamente!", "", "success");
-              //Volver a la pagina anterior
-              this.$router.back();
-            }
-          });
-      } catch (error) {
-        console.log(e);
-      } finally {
-        //Deshabilitar carga de pagina
-        this.load = false;
-      }
-    },
   },
   mounted() {
     //Esperar para ejecutar la funcion. No funciona sin 'mounted()'
@@ -136,15 +96,15 @@ export default {
 
       try {
         await Promise.all([
-          this.GET_DATA("categories/" + this.$route.params.id),
+          this.GET_DATA(this.apiUrl + "/" + this.$route.params.id),
         ]).then((position) => {
-          //La promesa resuelta 'position' se trasfiere a 'list' desde su primer valor '0'.
+          //La promesa resuelta 'position' se trasfiere a 'this.model' desde su primer valor '0'.
           this.model = position[0];
         });
       } catch (error) {
         console.log(e);
       } finally {
-        //Desaparecer la carga de datos
+        //Desaparecer la carga de datosu
         this.load = false;
       }
     });

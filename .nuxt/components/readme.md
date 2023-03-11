@@ -11,3 +11,5 @@ You can directly use them in pages and other components without the need to impo
 - `<BaseAside>` | `<base-aside>` (components/base/Aside.vue)
 - `<BaseFooter>` | `<base-footer>` (components/base/Footer.vue)
 - `<BaseNavbar>` | `<base-navbar>` (components/base/Navbar.vue)
+- `<CrudCreate>` | `<crud-create>` (components/crud/Create.vue)
+- `<CrudUpdate>` | `<crud-update>` (components/crud/Update.vue)

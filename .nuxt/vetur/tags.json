@@ -13,5 +13,11 @@
   },
   "BaseNavbar": {
     "description": "Auto imported from components/base/Navbar.vue"
+  },
+  "CrudCreate": {
+    "description": "Auto imported from components/crud/Create.vue"
+  },
+  "CrudUpdate": {
+    "description": "Auto imported from components/crud/Update.vue"
   }
 }
