@@ -3,11 +3,11 @@
     <!-- Llamado al componente con prop de 'load', recibiendo el valor de una variable como true -->
     <JcLoader :load="load" />
 
-    <AdminTemplate>
+    <AdminTemplate :page="page" :modulo="modulo">
       <div slot="body">
         <div class="row justify-content-end">
           <div class="col-2">
-            <nuxt-link to="/new" class="btn btn-dark btn-sm w-100">
+            <nuxt-link :to="urlNew" class="btn btn-dark btn-sm w-100">
               <i class="fas fa-plus"></i> Agregar
             </nuxt-link>
           </div>
@@ -31,7 +31,7 @@
                           <!-- 'to' dinamico para enviar parametros -->
                           <!-- Es capturado por $route.params.id -->
                           <nuxt-link
-                            :to="'/update/' + elemento.id"
+                            :to="urlUpdate + elemento.id"
                             class="btn btn-info btn-sm py-1 px-2"
                           >
                             <i class="fas fa-plus"></i>
@@ -65,19 +65,29 @@ import JcLoader from "../components/JcLoader.vue";
 
 export default {
   name: "IndexPage",
+
   head() {
     return {
       title: "Index",
     };
   },
+
   components: { AdminTemplate, JcLoader },
+
   data() {
     return {
       load: true, //Variable de carga que se establece como 'true' y que se utiliza en el componente de 'JcLoader'
       list: {}, //Variable de objeto que contendra los datos solicitados con la api de axios.
       apiUrl: "categories",
+      /*Estos valores se añaden como 'props' en 'AdminTemplate' y este los reenvia al 'Navbar' para que se muestren como
+      parametros */
+      page: "Configuracion",
+      modulo: "Categorias",
+      urlNew: "configuration/categories/new",
+      urlUpdate: "configuration/categories/update/"
     };
   },
+
   methods: {
     //No se escribe toda la ruta gracias a la configuracion en 'plugins/api'.
     //El metodo GET_DATA recibe la ruta desde el 'mounted' que ejecuta una promesa.

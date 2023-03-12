@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AdminTemplate>
+    <AdminTemplate :page="page" :modulo="modulo">
       <div slot="body">
         <div class="row justify-content-center">
           <div class="col-sm-8 col-12">
@@ -24,6 +24,16 @@
                         class="form-control"
                       />
                     </div>
+                    <div class="form-group col-12">
+                      <label for="">Codigo</label>
+                      <input
+                        type="text"
+                        name="description"
+                        id="description"
+                        v-model="model.code"
+                        class="form-control"
+                      />
+                    </div>
                   </div>
                 </CrudCreate>
               </div>
@@ -37,10 +47,11 @@
 
 <script>
 //AdminTemplate vendria a ser el 'MainLayout'
-import AdminTemplate from "../components/AdminTemplate.vue";
+import AdminTemplate from "../../../components/AdminTemplate.vue";
 
 export default {
   name: "IndexPage",
+
   head() {
     return {
       title: "Index",
@@ -54,8 +65,13 @@ export default {
       //Variable que se utiliza para tomar el valor del input
       model: {
         description: "",
+        code: ""
       },
-      apiUrl: "categories",
+      apiUrl: "measures",
+      /*Estos valores se añaden como 'props' en 'AdminTemplate' y este los reenvia al 'Navbar' para que se muestren como
+      parametros */
+      page: "Configuracion",
+      modulo: "Medidas"
     };
   },
 };

@@ -1,15 +1,10 @@
 <template>
   <div>
-    <!-- Acceso al parametro con route. No se usa 'this' en el template -->
-    {{ $route.params.id }}
+    <!-- {{ $route.params.id }} Acceso al parametro con route. No se usa 'this' en el template -->
 
-    <!-- Estructura de model -->
-    {{ model.description }}
+    <!-- {{ model.description }} Estructura de model -->
 
-    <!-- Llamado al componente con prop de 'load', recibiendo el valor de una variable como true -->
-    <JcLoader :load="load" />
-
-    <AdminTemplate>
+    <AdminTemplate :page="page" :modulo="modulo">
       <div slot="body">
         <div class="row justify-content-center">
           <div class="col-sm-8 col-12">
@@ -34,6 +29,16 @@
                         class="form-control"
                       />
                     </div>
+                    <div class="form-group col-12">
+                      <label for="">Codigo</label>
+                      <input
+                        type="text"
+                        name="description"
+                        id="description"
+                        v-model="model.code"
+                        class="form-control"
+                      />
+                    </div>
                   </div>
                 </CrudUpdate>
               </div>
@@ -47,9 +52,7 @@
 
 <script>
 //AdminTemplate vendria a ser el 'MainLayout'
-import AdminTemplate from "../../components/AdminTemplate.vue";
-//Importar componente de carga de pagina
-import JcLoader from "../../components/JcLoader.vue";
+import AdminTemplate from "../../../../components/AdminTemplate.vue";
 
 export default {
   name: "IndexPage",
@@ -59,15 +62,20 @@ export default {
     };
   },
 
-  components: { AdminTemplate, JcLoader },
+  components: { AdminTemplate},
   data() {
     return {
       load: true,
       //Variable que se utiliza para tomar el valor del input
       model: {
         description: "",
+        code: ""
       },
-      apiUrl: "categories",
+      apiUrl: "measures",
+      /*Estos valores se añaden como 'props' en 'AdminTemplate' y este los reenvia al 'Navbar' para que se muestren como
+      parametros */
+      page: "Configuracion",
+      modulo: "Medidas"
     };
   },
 

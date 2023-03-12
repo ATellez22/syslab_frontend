@@ -46,16 +46,20 @@
             </a>
           </li>
           <li class="breadcrumb-item text-sm">
-            <a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+            <!-- javascript:void(0) para que no se ejecute ninguna funcion -->
+            <a class="opacity-5 text-dark" href="javascript:void(0);">{{
+              page
+            }}</a>
           </li>
           <li
             class="breadcrumb-item text-sm text-dark active"
             aria-current="page"
           >
-            Analytics
+          <!-- 'page' y 'modulo' vienen desde AdminTemplate, que lo recibio primeramente de 'new' y '_id' -->
+            {{ modulo }}
           </li>
         </ol>
-        <h6 class="font-weight-bolder mb-0">Analytics</h6>
+        <h6 class="font-weight-bolder mb-0">{{ modulo }}</h6>
       </nav>
       <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none">
         <a href="javascript:;" class="nav-link text-body p-0">
@@ -237,5 +241,16 @@
 <script>
 export default {
   name: "Navbar",
+
+  props: {
+    page: {
+      type: String,
+      default: "",
+    },
+    modulo: {
+      type: String,
+      default: "",
+    },
+  },
 };
 </script>

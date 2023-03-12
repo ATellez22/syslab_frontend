@@ -4,8 +4,15 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _7d6f9066 = () => interopDefault(import('../pages/new.vue' /* webpackChunkName: "pages/new" */))
-const _159a66d7 = () => interopDefault(import('../pages/update/_id.vue' /* webpackChunkName: "pages/update/_id" */))
+const _a2af1aaa = () => interopDefault(import('../pages/configuration/brands/index.vue' /* webpackChunkName: "pages/configuration/brands/index" */))
+const _27a06cfb = () => interopDefault(import('../pages/configuration/categories/index.vue' /* webpackChunkName: "pages/configuration/categories/index" */))
+const _26298918 = () => interopDefault(import('../pages/configuration/measures/index.vue' /* webpackChunkName: "pages/configuration/measures/index" */))
+const _67a20e8e = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
+const _10814709 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
+const _38ef5fc2 = () => interopDefault(import('../pages/configuration/measures/new.vue' /* webpackChunkName: "pages/configuration/measures/new" */))
+const _7d9df72a = () => interopDefault(import('../pages/configuration/brands/update/_id.vue' /* webpackChunkName: "pages/configuration/brands/update/_id" */))
+const _6ea8fc1b = () => interopDefault(import('../pages/configuration/categories/update/_id.vue' /* webpackChunkName: "pages/configuration/categories/update/_id" */))
+const _872d5d7c = () => interopDefault(import('../pages/configuration/measures/update/_id.vue' /* webpackChunkName: "pages/configuration/measures/update/_id" */))
 const _7b238682 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -20,13 +27,41 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/new",
-    component: _7d6f9066,
-    name: "new"
+    path: "/configuration/brands",
+    component: _a2af1aaa,
+    name: "configuration-brands"
   }, {
-    path: "/update/:id?",
-    component: _159a66d7,
-    name: "update-id"
+    path: "/configuration/categories",
+    component: _27a06cfb,
+    name: "configuration-categories"
+  }, {
+    path: "/configuration/measures",
+    component: _26298918,
+    name: "configuration-measures"
+  }, {
+    path: "/configuration/brands/new",
+    component: _67a20e8e,
+    name: "configuration-brands-new"
+  }, {
+    path: "/configuration/categories/new",
+    component: _10814709,
+    name: "configuration-categories-new"
+  }, {
+    path: "/configuration/measures/new",
+    component: _38ef5fc2,
+    name: "configuration-measures-new"
+  }, {
+    path: "/configuration/brands/update/:id?",
+    component: _7d9df72a,
+    name: "configuration-brands-update-id"
+  }, {
+    path: "/configuration/categories/update/:id?",
+    component: _6ea8fc1b,
+    name: "configuration-categories-update-id"
+  }, {
+    path: "/configuration/measures/update/:id?",
+    component: _872d5d7c,
+    name: "configuration-measures-update-id"
   }, {
     path: "/",
     component: _7b238682,
