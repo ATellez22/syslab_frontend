@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Aside />
+    <Aside> </Aside>
 
     <main
       class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
@@ -10,10 +10,13 @@
 
       <div class="container-fluid py-4">
         <!-- Slot similar al de Laravel para añadir contenido -->
-        <slot name="body" />
-        <Footer />
+        <slot name="body"></slot>
+        <Footer></Footer>
       </div>
     </main>
+
+
+
   </div>
 </template>
 
@@ -37,4 +40,6 @@ export default {
     },
   },
 };
+
+
 </script>

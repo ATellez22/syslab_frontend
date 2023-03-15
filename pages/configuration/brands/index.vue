@@ -17,14 +17,15 @@
                 <table class="table">
                   <thead>
                     <th class="py-0 px-1">Id</th>
-                    <th class="py-0 px-1">Description</th>
-                    <th class="py-0 px-1">Accion</th>
+                    <th class="py-0 px-1">Código de Barras</th>
+                    <th class="py-0 px-1">Descripción</th>
                   </thead>
                   <tbody>
                     <!-- Recorrido con 'v-for', como mejor alternativa a 'map' en React/Next -->
                     <!-- Se recorre la lista generada por la promesa y trasferida a la data 'List' -->
                     <tr v-for="(elemento, indice) in list">
                       <td class="py-0 px-1">{{ elemento.id }}</td>
+                      <td class="py-0 px-1">{{ elemento.barcode }}</td>
                       <td class="py-0 px-1">{{ elemento.description }}</td>
                       <td class="py-0 px-1">
                         <div class="btn-group">

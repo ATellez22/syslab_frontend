@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <!-- Llamado al componente con prop de 'load', recibiendo el valor de una variable como true -->
@@ -26,6 +27,8 @@
 <script>
 export default {
   name: "CreatePage",
+
+  //En este componente va la interfaz de botones junto a la accion de guardar con la API
 
   props: {
     model: {
@@ -57,6 +60,7 @@ export default {
       try {
         //Habilitar carga de pagina
         this.load = true;
+        //CrudCreate recibe los props de 'ApiUrl' y 'Model' y estos se añaden aqui para guardar
         const res = await this.$api.$post(this.apiUrl, this.model);
 
         //Sweet-alert2
@@ -88,16 +92,7 @@ export default {
       }
     },
   },
-
-  mounted() {
-    //Esperar para ejecutar la funcion. No funciona sin 'mounted()'
-    this.$nextTick(async () => {
-      try {
-      } catch (error) {
-        console.log(e);
-      } finally {
-      }
-    });
-  },
 };
 </script>
+
+

@@ -1,5 +1,12 @@
 [
   {
+    "name": "configuration-articles",
+    "path": "/configuration/articles",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/index.vue",
+    "chunkName": "pages/configuration/articles/index",
+    "_name": "_dd683648"
+  },
+  {
     "name": "configuration-brands",
     "path": "/configuration/brands",
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/brands/index.vue",
@@ -21,6 +28,13 @@
     "_name": "_26298918"
   },
   {
+    "name": "configuration-articles-new",
+    "path": "/configuration/articles/new",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/new.vue",
+    "chunkName": "pages/configuration/articles/new",
+    "_name": "_be8979ac"
+  },
+  {
     "name": "configuration-brands-new",
     "path": "/configuration/brands/new",
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/brands/new.vue",
@@ -40,6 +54,13 @@
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/measures/new.vue",
     "chunkName": "pages/configuration/measures/new",
     "_name": "_38ef5fc2"
+  },
+  {
+    "name": "configuration-articles-update-id",
+    "path": "/configuration/articles/update/:id?",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/update/_id.vue",
+    "chunkName": "pages/configuration/articles/update/_id",
+    "_name": "_2efb6e4c"
   },
   {
     "name": "configuration-brands-update-id",

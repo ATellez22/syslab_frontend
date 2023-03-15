@@ -4,12 +4,15 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _dd683648 = () => interopDefault(import('../pages/configuration/articles/index.vue' /* webpackChunkName: "pages/configuration/articles/index" */))
 const _a2af1aaa = () => interopDefault(import('../pages/configuration/brands/index.vue' /* webpackChunkName: "pages/configuration/brands/index" */))
 const _27a06cfb = () => interopDefault(import('../pages/configuration/categories/index.vue' /* webpackChunkName: "pages/configuration/categories/index" */))
 const _26298918 = () => interopDefault(import('../pages/configuration/measures/index.vue' /* webpackChunkName: "pages/configuration/measures/index" */))
+const _be8979ac = () => interopDefault(import('../pages/configuration/articles/new.vue' /* webpackChunkName: "pages/configuration/articles/new" */))
 const _67a20e8e = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
 const _10814709 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
 const _38ef5fc2 = () => interopDefault(import('../pages/configuration/measures/new.vue' /* webpackChunkName: "pages/configuration/measures/new" */))
+const _2efb6e4c = () => interopDefault(import('../pages/configuration/articles/update/_id.vue' /* webpackChunkName: "pages/configuration/articles/update/_id" */))
 const _7d9df72a = () => interopDefault(import('../pages/configuration/brands/update/_id.vue' /* webpackChunkName: "pages/configuration/brands/update/_id" */))
 const _6ea8fc1b = () => interopDefault(import('../pages/configuration/categories/update/_id.vue' /* webpackChunkName: "pages/configuration/categories/update/_id" */))
 const _872d5d7c = () => interopDefault(import('../pages/configuration/measures/update/_id.vue' /* webpackChunkName: "pages/configuration/measures/update/_id" */))
@@ -27,6 +30,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/configuration/articles",
+    component: _dd683648,
+    name: "configuration-articles"
+  }, {
     path: "/configuration/brands",
     component: _a2af1aaa,
     name: "configuration-brands"
@@ -39,6 +46,10 @@ export const routerOptions = {
     component: _26298918,
     name: "configuration-measures"
   }, {
+    path: "/configuration/articles/new",
+    component: _be8979ac,
+    name: "configuration-articles-new"
+  }, {
     path: "/configuration/brands/new",
     component: _67a20e8e,
     name: "configuration-brands-new"
@@ -50,6 +61,10 @@ export const routerOptions = {
     path: "/configuration/measures/new",
     component: _38ef5fc2,
     name: "configuration-measures-new"
+  }, {
+    path: "/configuration/articles/update/:id?",
+    component: _2efb6e4c,
+    name: "configuration-articles-update-id"
   }, {
     path: "/configuration/brands/update/:id?",
     component: _7d9df72a,

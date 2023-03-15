@@ -27,10 +27,12 @@
 export default {
   name: "UpdatePage",
 
+   //En este componente va la interfaz de botones junto a la accion de actualizar con la API
+
   props: {
     model: {
       type: Object,
-      default: () => {}, //Funcion vacia?
+      default: () => {},
     },
     apiUrl: {
       type: String,
@@ -57,6 +59,7 @@ export default {
       try {
         //Habilitar carga de pagina
         this.load = true;
+        //CrudCreate recibe los props de 'ApiUrl' y 'Model' y estos se añaden aqui para actualizar
         const res = await this.$api.$put(this.apiUrl+"/"+this.model.id, this.model);
 
         //Sweet-alert2
@@ -87,17 +90,6 @@ export default {
         this.load = false;
       }
     },
-  },
-
-  mounted() {
-    //Esperar para ejecutar la funcion. No funciona sin 'mounted()'
-    this.$nextTick(async () => {
-      try {
-      } catch (error) {
-        console.log(e);
-      } finally {
-      }
-    });
   },
 };
 </script>
