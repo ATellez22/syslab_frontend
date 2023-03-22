@@ -21,14 +21,16 @@ export default {
     script: [
       { src: "/assets/js/core/jquery-3.6.4.js" },
       { src: "https://kit.fontawesome.com/42d5adcbca.js" },
-      { src: "/assets/js/core/popper.min.js" },
-      { src: "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" },
+      { src: "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" },
+      { src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" },
       //{ src: "/assets/js/core/bootstrap.min.js" },
       { src: "/assets/js/plugins/perfect-scrollbar.min.js" },
       { src: "/assets/js/plugins/smooth-scrollbar.min.js" },
       { src: "/assets/js/plugins/dragula/dragula.min.js" },
       //{ src: "/assets/js/plugins/jkanban/jkanban.js" },
       { src: "/assets/js/plugins/chartjs.min.js" },
+
+
     ]
   },
   // CSS Global: https://go.nuxtjs.dev/config-css

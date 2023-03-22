@@ -17,8 +17,7 @@
                 <table class="table">
                   <thead>
                     <th class="py-0 px-1">Id</th>
-                    <th class="py-0 px-1">Description</th>
-                    <th class="py-0 px-1">Accion</th>
+                    <th class="py-0 px-1">Descripción</th>
                   </thead>
                   <tbody>
                     <!-- Recorrido con 'v-for', como mejor alternativa a 'map' en React/Next -->
@@ -155,7 +154,7 @@ export default {
          cuando se resuelven todas las Promesas proporcionadas,
          o se rechaza cuando se rechaza alguna Promesa.
 
-          @parametro — Un array de promesas (this.GET_DATA('brands'))
+          @parametro — Un array de promesas (this.GET_DATA('categories'))
 
           @return — Una nueva promesa. (then((v))
       */

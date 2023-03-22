@@ -28,6 +28,13 @@
     "_name": "_26298918"
   },
   {
+    "name": "modules-inventory",
+    "path": "/modules/inventory",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/inventory/index.vue",
+    "chunkName": "pages/modules/inventory/index",
+    "_name": "_2862f3f8"
+  },
+  {
     "name": "configuration-articles-new",
     "path": "/configuration/articles/new",
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/new.vue",
@@ -82,6 +89,13 @@
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/measures/update/_id.vue",
     "chunkName": "pages/configuration/measures/update/_id",
     "_name": "_872d5d7c"
+  },
+  {
+    "name": "modules-inventory-kardex-id",
+    "path": "/modules/inventory/kardex/:id?",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/inventory/kardex/_id.vue",
+    "chunkName": "pages/modules/inventory/kardex/_id",
+    "_name": "_42dac2b8"
   },
   {
     "name": "index",
