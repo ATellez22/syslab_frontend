@@ -86,7 +86,7 @@ export default {
          cuando se resuelven todas las Promesas proporcionadas,
          o se rechaza cuando se rechaza alguna Promesa.
 
-          @parametro — Un array de promesas (this.GET_DATA('brands'))
+          @parametro — Un array de promesas (this.GET_DATA('categories'))
 
           @return — Una nueva promesa. (then((v))
       */

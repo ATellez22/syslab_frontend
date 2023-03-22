@@ -8,6 +8,7 @@ const _dd683648 = () => interopDefault(import('../pages/configuration/articles/i
 const _a2af1aaa = () => interopDefault(import('../pages/configuration/brands/index.vue' /* webpackChunkName: "pages/configuration/brands/index" */))
 const _27a06cfb = () => interopDefault(import('../pages/configuration/categories/index.vue' /* webpackChunkName: "pages/configuration/categories/index" */))
 const _26298918 = () => interopDefault(import('../pages/configuration/measures/index.vue' /* webpackChunkName: "pages/configuration/measures/index" */))
+const _2862f3f8 = () => interopDefault(import('../pages/modules/inventory/index.vue' /* webpackChunkName: "pages/modules/inventory/index" */))
 const _be8979ac = () => interopDefault(import('../pages/configuration/articles/new.vue' /* webpackChunkName: "pages/configuration/articles/new" */))
 const _67a20e8e = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
 const _10814709 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
@@ -16,6 +17,7 @@ const _2efb6e4c = () => interopDefault(import('../pages/configuration/articles/u
 const _7d9df72a = () => interopDefault(import('../pages/configuration/brands/update/_id.vue' /* webpackChunkName: "pages/configuration/brands/update/_id" */))
 const _6ea8fc1b = () => interopDefault(import('../pages/configuration/categories/update/_id.vue' /* webpackChunkName: "pages/configuration/categories/update/_id" */))
 const _872d5d7c = () => interopDefault(import('../pages/configuration/measures/update/_id.vue' /* webpackChunkName: "pages/configuration/measures/update/_id" */))
+const _42dac2b8 = () => interopDefault(import('../pages/modules/inventory/kardex/_id.vue' /* webpackChunkName: "pages/modules/inventory/kardex/_id" */))
 const _7b238682 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -45,6 +47,10 @@ export const routerOptions = {
     path: "/configuration/measures",
     component: _26298918,
     name: "configuration-measures"
+  }, {
+    path: "/modules/inventory",
+    component: _2862f3f8,
+    name: "modules-inventory"
   }, {
     path: "/configuration/articles/new",
     component: _be8979ac,
@@ -77,6 +83,10 @@ export const routerOptions = {
     path: "/configuration/measures/update/:id?",
     component: _872d5d7c,
     name: "configuration-measures-update-id"
+  }, {
+    path: "/modules/inventory/kardex/:id?",
+    component: _42dac2b8,
+    name: "modules-inventory-kardex-id"
   }, {
     path: "/",
     component: _7b238682,
