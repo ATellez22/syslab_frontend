@@ -155,14 +155,18 @@ export default {
         measure_id: "",
         minimum_stock: 0,
       },
+      //Va como argumento para GET_DATA que se ejecuta en el Promise del mounted
       apiUrl: "articles",
+
       /*Estos valores se añaden como 'props' en 'AdminTemplate' y este los reenvia al 'Navbar' para que se muestren como
       parametros */
       page: "Configuracion",
       modulo: "Articulos",
-      load: true, //Variable de carga que se establece como 'true' y que se utiliza en el componente de 'JcLoader'
 
-      /* Listas de claves foraneas */
+      //Variable de carga que se establece como 'true' y que se utiliza en el componente de 'JcLoader'
+      load: true,
+
+      /* Listas de claves foraneas. Esto se llena con el GET_DATA a través del Promise en el mounted */
       brands_list: [],
       categories_list: [],
       measures_list: [],
@@ -172,6 +176,7 @@ export default {
   methods: {
     //No se escribe toda la ruta gracias a la configuracion en 'plugins/api'.
     //El metodo GET_DATA recibe la ruta desde el 'mounted' que ejecuta una promesa.
+    //Este sería el metodo 'listar' de todas las apis. Sirven para rellenas listas del DATA.
     async GET_DATA(path) {
       const res = await this.$api.$get(path);
       return res;
@@ -186,6 +191,7 @@ export default {
     this.$nextTick(async () => {
       try {
         await Promise.all([
+          //Para mas de una lista, estan se ponen dentro del array separados por comas
           this.GET_DATA("brands"),
           this.GET_DATA("categories"),
           this.GET_DATA("measures"),

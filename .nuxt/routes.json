@@ -35,6 +35,20 @@
     "_name": "_2862f3f8"
   },
   {
+    "name": "modules-purchase",
+    "path": "/modules/purchase",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/purchase/index.vue",
+    "chunkName": "pages/modules/purchase/index",
+    "_name": "_b88bdea2"
+  },
+  {
+    "name": "modules-sale",
+    "path": "/modules/sale",
+    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/sale/index.vue",
+    "chunkName": "pages/modules/sale/index",
+    "_name": "_2edc6416"
+  },
+  {
     "name": "configuration-articles-new",
     "path": "/configuration/articles/new",
     "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/new.vue",

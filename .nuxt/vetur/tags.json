@@ -19,5 +19,8 @@
   },
   "CrudUpdate": {
     "description": "Auto imported from components/crud/Update.vue"
+  },
+  "PosArticle": {
+    "description": "Auto imported from components/pos/Article.vue"
   }
 }

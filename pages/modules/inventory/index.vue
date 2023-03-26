@@ -110,6 +110,7 @@ export default {
   methods: {
     //No se escribe toda la ruta gracias a la configuracion en 'plugins/api'.
     //El metodo GET_DATA recibe la ruta desde el 'mounted' que ejecuta una promesa.
+    //Este sería el metodo 'listar' de todas las apis
     async GET_DATA(path) {
       const res = await this.$api.$get(path);
       return res;
@@ -161,6 +162,8 @@ export default {
 
     //------------------------------Eliminar-------------------------------------//
   },
+
+  //Importante: Las funciones automaticas o de lista se crean el el METHOD, pero se ejecutan el MOUNTED
   mounted() {
     //Esperar para ejecutar la funcion. No funciona sin 'mounted()'.
 
@@ -177,6 +180,8 @@ export default {
           @parametro — Un array de promesas (this.GET_DATA('brands'))
 
           @return — Una nueva promesa. (then((v))
+
+          La promesa es la ejecutara de la funcion GET_DATA desde el 'mounted'
       */
 
       try {

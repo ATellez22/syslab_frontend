@@ -13,3 +13,4 @@ You can directly use them in pages and other components without the need to impo
 - `<BaseNavbar>` | `<base-navbar>` (components/base/Navbar.vue)
 - `<CrudCreate>` | `<crud-create>` (components/crud/Create.vue)
 - `<CrudUpdate>` | `<crud-update>` (components/crud/Update.vue)
+- `<PosArticle>` | `<pos-article>` (components/pos/Article.vue)

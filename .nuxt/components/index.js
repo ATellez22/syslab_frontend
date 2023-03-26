@@ -5,6 +5,7 @@ export { default as BaseFooter } from '../../components/base/Footer.vue'
 export { default as BaseNavbar } from '../../components/base/Navbar.vue'
 export { default as CrudCreate } from '../../components/crud/Create.vue'
 export { default as CrudUpdate } from '../../components/crud/Update.vue'
+export { default as PosArticle } from '../../components/pos/Article.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
