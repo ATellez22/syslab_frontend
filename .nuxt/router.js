@@ -9,6 +9,8 @@ const _a2af1aaa = () => interopDefault(import('../pages/configuration/brands/ind
 const _27a06cfb = () => interopDefault(import('../pages/configuration/categories/index.vue' /* webpackChunkName: "pages/configuration/categories/index" */))
 const _26298918 = () => interopDefault(import('../pages/configuration/measures/index.vue' /* webpackChunkName: "pages/configuration/measures/index" */))
 const _2862f3f8 = () => interopDefault(import('../pages/modules/inventory/index.vue' /* webpackChunkName: "pages/modules/inventory/index" */))
+const _b88bdea2 = () => interopDefault(import('../pages/modules/purchase/index.vue' /* webpackChunkName: "pages/modules/purchase/index" */))
+const _2edc6416 = () => interopDefault(import('../pages/modules/sale/index.vue' /* webpackChunkName: "pages/modules/sale/index" */))
 const _be8979ac = () => interopDefault(import('../pages/configuration/articles/new.vue' /* webpackChunkName: "pages/configuration/articles/new" */))
 const _67a20e8e = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
 const _10814709 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
@@ -51,6 +53,14 @@ export const routerOptions = {
     path: "/modules/inventory",
     component: _2862f3f8,
     name: "modules-inventory"
+  }, {
+    path: "/modules/purchase",
+    component: _b88bdea2,
+    name: "modules-purchase"
+  }, {
+    path: "/modules/sale",
+    component: _2edc6416,
+    name: "modules-sale"
   }, {
     path: "/configuration/articles/new",
     component: _be8979ac,

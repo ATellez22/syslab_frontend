@@ -158,6 +158,7 @@ export default {
 
     //------------------------------Eliminar-------------------------------------//
   },
+   //Importante: Las funciones automaticas o de lista se crean el el METHOD, pero se ejecutan el MOUNTED
   mounted() {
     //Esperar para ejecutar la funcion. No funciona sin 'mounted()'.
 

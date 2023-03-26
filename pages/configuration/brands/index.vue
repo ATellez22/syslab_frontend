@@ -17,7 +17,6 @@
                 <table class="table">
                   <thead>
                     <th class="py-0 px-1">Id</th>
-                    <th class="py-0 px-1">Código de Barras</th>
                     <th class="py-0 px-1">Descripción</th>
                   </thead>
                   <tbody>
@@ -25,7 +24,6 @@
                     <!-- Se recorre la lista generada por la promesa y trasferida a la data 'List' -->
                     <tr v-for="(elemento, indice) in list">
                       <td class="py-0 px-1">{{ elemento.id }}</td>
-                      <td class="py-0 px-1">{{ elemento.barcode }}</td>
                       <td class="py-0 px-1">{{ elemento.description }}</td>
                       <td class="py-0 px-1">
                         <div class="btn-group">
@@ -143,6 +141,8 @@ export default {
 
     //------------------------------Eliminar-------------------------------------//
   },
+
+  //Importante: Las funciones de lista se crean el el METHOD, pero se ejecutan el MOUNTED
   mounted() {
     //Esperar para ejecutar la funcion. No funciona sin 'mounted()'.
 
