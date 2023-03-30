@@ -27,6 +27,7 @@
                             class="form-control bg-transparent border-0 text-white"
                             placeholder="Buscar..."
                             v-model="find"
+                            @keyup.enter="Codebar()"
                           />
                         </div>
                       </div>
@@ -80,7 +81,10 @@
                     v-for="elemento in articlesCategoriesFilter"
                   >
                     <!-- Componente de article que recibe la lista como props -->
-                    <Article :articles="elemento"></Article>
+                    <!-- @AgregarCarrito es un evento, algo asi como 'evento props' que se encuentra en el
+                    componente de 'Article' y se lo llama mediante la funcion '$emit'.
+                          Lo que hace basicamente es ejecutar al funcion de otra pagina o componente -->
+                    <Article :articles="elemento" @AddCart="addCart"></Article>
                   </div>
                 </div>
               </div>
@@ -147,7 +151,9 @@
                 class="card-header bg-gradient-dark text-center pt-4 pb-5 position-relative"
               >
                 <div class="z-index-1 position-relative">
-                  <h1 class="text-white mt-2 mb-0"><small></small>0.00</h1>
+                  <h1 class="text-white mt-2 mb-0">
+                    <small></small>{{ Number(totalCart).toFixed(2) }}
+                  </h1>
                   <h6 class="text-white">Total</h6>
                 </div>
               </div>
@@ -247,33 +253,48 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <!-- Recorrer los items 'pusheados' en el evento 'AddCart' -->
+                      <tr v-for="(elemento, i) in cart">
                         <td class="text-start">
                           <p class="text-xxs font-weight-bold mb-0 text-start">
-                            0
+                            {{ elemento.article.description }}
                           </p>
                         </td>
                         <td class="text-start">
                           <p class="text-xxs font-weight-bold mb-0 text-start">
-                            0
+                            {{ elemento.quantity }}
                           </p>
                         </td>
                         <td class="text-start">
                           <p class="text-xxs font-weight-bold mb-0 text-start">
-                            0
+                            {{
+                              Number(
+                                elemento.quantity * elemento.purchase_price
+                              ).toFixed(2)
+                            }}
                           </p>
                         </td>
                         <td>
                           <div class="input-group input-group-sm">
+                            <!--
+                              Al dar click en 'editar' el valor de 'modalEdit' pasa a ser 'true', lo que activa
+                              el v-bind:class del 'modal' para que se muestre la ventana.
+                            -->
+                            <!--
+                                Los elementos del recorrido se transfieren a 'item', el cual es una variable
+                                de objeto que se encargará de mostrar el articulo seleccionado.
+                            -->
                             <button
                               class="btn btn-outline-primary mb-0 btn-sm"
                               type="button"
+                              @click="[(modalEdit = true), (item = elemento)]"
                             >
                               <i class="fas fa-pen"></i>
                             </button>
                             <button
                               class="btn btn-outline-danger mb-0 btn-sm"
                               type="button"
+                              @click="deleteItem(i)"
                             >
                               <i class="fas fa-times"></i>
                             </button>
@@ -292,6 +313,10 @@
               </div>
             </div>
           </div>
+          <!--
+            v-bind:class que mediante el valor de modalEdit (true o false) se muestra el modal gracias
+            a 'showModal' del css o que no haga nada...
+          -->
           <div
             class="modal fade"
             :class="modalEdit ? 'showModal' : ''"
@@ -307,6 +332,9 @@
                   <h5 class="modal-title" id="exampleModalLabel">
                     Editar artículo
                   </h5>
+                  <!--
+                   Cerrar ventana de 'x' con modalEdit como 'false'
+                  -->
                   <button
                     type="button"
                     class="btn-close text-dark"
@@ -321,12 +349,62 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="form-group has-success">
-                        <label for="">article</label>
+                        <label for="">Articulo</label>
+                        <!--
+                          Por que 'value?' Por que no 'v-model'?
+                        -->
                         <input
                           type="text"
                           placeholder=""
                           disabled
                           class="form-control"
+                          :value="item.article.description"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form-group has-success">
+                        <label for="">Precio de compra</label>
+                        <input
+                          type="text"
+                          placeholder=""
+                          class="form-control"
+                          v-model.number="item.purchase_price"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group has-success">
+                        <label for="">Precio de venta </label>
+                        <input
+                          type="text"
+                          placeholder=""
+                          class="form-control"
+                          v-model.number="item.price"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form-group has-success">
+                        <label for="">Precio</label>
+                        <input
+                          type="text"
+                          placeholder=""
+                          class="form-control"
+                          v-model.number="item.purchase_price"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group has-success">
+                        <label for="">Cantidad</label>
+                        <input
+                          type="text"
+                          placeholder=""
+                          class="form-control"
+                          v-model.number="item.quantity"
                         />
                       </div>
                     </div>
@@ -391,34 +469,58 @@ export default {
       brands_list: [],
       categories_list: [],
 
+      /* Carrito de compras */
+      cart: [],
+
       modalEdit: false,
+
+      item: {
+        article: {
+          description: "",
+        },
+        price: 0,
+        purchase_price: 0,
+        quantity: 0,
+      },
     };
   },
 
   computed: {
+    /*
+      En el v-for, es posible recorrer el resultado de la API como por ejemplo 'brands_list'; pero también
+      es posible recorrer una función que genera una lista.
+      'articlesFilter()' puede ser recorrido con el v-for siempre que tenga el 'return' de una lista,
+       por ejemplo: 'return this.articles_list' (retorna la misma lista pero desde la función).
+    */
     articlesFilter() {
+      //Capturar el v-model del buscador
       let find = this.find;
 
+      //Preguntar si no esta vacio
       if (find != "") {
-        return this.articles_list.filter((a) => {
-          //Si descripción es distinto de 'null', le asignamos a descripción, sino, asignamos vacio
-          let description = a.description != null ? a.description : "";
-          //let barcode = a.barcode != null ? a.barcode : "";
+        //Array.Filter() recibe un callback que establece la condición.
+        //Ejemplo básico de 'filter' = ''let pequeños = gente.filter(persona => persona.edad <= 3)''
+        return this.articles_list.filter((elemento) => {
+          //Aqui se filtra lo del 'find', pero no comprendo su funcionalidad...
+          let description =
+            elemento.description != null ? elemento.description : "";
+          let barcode = elemento.barcode != null ? elemento.barcode : "";
           return (
-            description.toLowerCase().indexOf(find.toLowerCase()) != -1
-            // ||barcode.toLowerCase().indexOf(find.toLowerCase()) != -1
+            description.toLowerCase().indexOf(find.toLowerCase()) != -1 ||
+            //Barcode es numerico
+            barcode.toString().toLowerCase().indexOf(find.toLowerCase()) != -1
           );
         });
       }
+      //Si no hay nada escrito en el buscador, retornar la lista normal
       return this.articles_list;
     },
 
     articlesBrandsFilter() {
       let brand = this.brand;
       if (brand != "all") {
-        return this.articlesFilter.filter((a) => {
-          console.log(brand);
-          return a.brand_id == brand;
+        return this.articlesFilter.filter((elemento) => {
+          return elemento.brand_id == brand;
         });
       }
       return this.articlesFilter;
@@ -427,11 +529,16 @@ export default {
     articlesCategoriesFilter() {
       let category = this.category;
       if (category != "all") {
-        return this.articlesBrandsFilter.filter((a) => {
-          return a.category_id == category;
+        return this.articlesBrandsFilter.filter((elemento) => {
+          return elemento.category_id == category;
         });
       }
       return this.articlesBrandsFilter;
+    },
+
+    totalCart() {
+      //Reduce?
+      return this.cart.reduce((a, b) => a + b.quantity * b.purchase_price, 0);
     },
   },
 
@@ -460,6 +567,42 @@ export default {
         });
       } catch (error) {
         console.log(e);
+      }
+    },
+
+    //Añadir valores al carrito, se ejecuta del evento capturado en el componente Article
+    addCart(articles) {
+      let id = articles.id;
+
+      let findRegister = this.cart.filter((i) => i.article.id == id);
+
+      if (findRegister.length > 0) {
+        let index = this.cart.findIndex((i) => i.article.id == id);
+        this.cart[index].quantity += 1;
+      } else {
+        const item = {
+          article: articles,
+          quantity: 1,
+          purchase_price: articles.purchase_price,
+        };
+
+        this.cart.push(item);
+      }
+    },
+
+    deleteItem(i) {
+      this.cart.splice(i, 1);
+    },
+
+    //Lector de código de barras
+    Codebar() {
+      let code = this.find;
+      let findRegister = this.articlesCategoriesFilter.filter(
+        (i) => i.barcode == code
+      );
+      if (findRegister.length > 0) {
+        this.addCart(findRegister[0]);
+        this.find = "";
       }
     },
   },
@@ -501,7 +644,9 @@ export default {
   },
 };
 </script>
+
 <style>
+/* Mostrar el modal */
 .showModal {
   visibility: visible;
   display: block;

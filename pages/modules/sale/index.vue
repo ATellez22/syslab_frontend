@@ -48,7 +48,13 @@
                             <option value="all" class="text-dark">
                               Todas las marcas
                             </option>
-                            <option class="text-dark" v-for="m in marcas" :value="m.id">{{m.nombre}}</option>
+                            <option
+                              class="text-dark"
+                              v-for="m in marcas"
+                              :value="m.id"
+                            >
+                              {{ m.nombre }}
+                            </option>
                           </select>
                         </div>
                       </div>
@@ -57,11 +63,21 @@
                 </div>
               </div>
 
-              <div class="col-12 py-2" style="min-height: 60vh;max-height: 60vh;overflow-y: scroll;overflow-x: none;">
+              <div
+                class="col-12 py-2"
+                style="
+                  min-height: 60vh;
+                  max-height: 60vh;
+                  overflow-y: scroll;
+                  overflow-x: none;
+                "
+              >
                 <div class="row">
-
-                  <div class="col-3"  v-for="m in articulosCategoria">
-                    <PosArticulo :articulo="m" @AddCarrito="AddCarrito"></PosArticulo>
+                  <div class="col-3" v-for="m in articulosCategoria">
+                    <PosArticulo
+                      :articulo="m"
+                      @AddCarrito="AddCarrito"
+                    ></PosArticulo>
                   </div>
                 </div>
               </div>
@@ -103,16 +119,16 @@
                           <a
                             class="dropdown-item border-radius-md"
                             href="javascript:;"
-                            @click="categoria='all'"
+                            @click="categoria = 'all'"
                             >Todo</a
                           >
                         </li>
-                        <li  v-for="m in categorias">
+                        <li v-for="m in categorias">
                           <a
                             class="dropdown-item border-radius-md"
                             href="javascript:;"
-                            @click="categoria=m.id"
-                            >{{m.nombre}}</a
+                            @click="categoria = m.id"
+                            >{{ m.nombre }}</a
                           >
                         </li>
                       </ul>
@@ -128,7 +144,9 @@
                 class="card-header bg-gradient-dark text-center pt-4 pb-5 position-relative"
               >
                 <div class="z-index-1 position-relative">
-                  <h1 class="text-white mt-2 mb-0"><small></small>{{Number(totalCarrito).toFixed(2)}}</h1>
+                  <h1 class="text-white mt-2 mb-0">
+                    <small></small>{{ Number(totalCarrito).toFixed(2) }}
+                  </h1>
                   <h6 class="text-white">Total</h6>
                 </div>
               </div>
@@ -229,20 +247,20 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="(m,i) in carrito" >
+                      <tr v-for="(m, i) in carrito">
                         <td class="text-start">
                           <p class="text-xxs font-weight-bold mb-0 text-start">
-                            {{m.articulo.nombre}}
+                            {{ m.articulo.nombre }}
                           </p>
                         </td>
                         <td class="text-start">
                           <p class="text-xxs font-weight-bold mb-0 text-start">
-                            {{m.cantidad}}
+                            {{ m.cantidad }}
                           </p>
                         </td>
                         <td class="text-start">
                           <p class="text-xxs font-weight-bold mb-0 text-start">
-                            {{Number(m.cantidad*m.precio).toFixed(2)}}
+                            {{ Number(m.cantidad * m.precio).toFixed(2) }}
                           </p>
                         </td>
                         <td>
@@ -250,7 +268,7 @@
                             <button
                               class="btn btn-outline-primary mb-0 btn-sm"
                               type="button"
-                              @click="[modalEdit=true,item=m]"
+                              @click="[(modalEdit = true), (item = m)]"
                             >
                               <i class="fas fa-pen"></i>
                             </button>
@@ -317,7 +335,6 @@
                       </div>
                     </div>
 
-
                     <div class="col-6">
                       <div class="form-group has-success">
                         <label for="">Precio</label>
@@ -362,9 +379,6 @@
 </template>
 
 <script>
-
-
-
 export default {
   head() {
     return {
@@ -381,55 +395,56 @@ export default {
       categoria: "all",
       load: true,
       modalEdit: false,
-      articulos:[],
-      marcas:[],
-      categorias:[],
-      carrito:[],
-      item:{
-        articulo:{
-          nombre:''
+      articulos: [],
+      marcas: [],
+      categorias: [],
+      carrito: [],
+      item: {
+        articulo: {
+          nombre: "",
         },
-        cantidad:0,
-        precio:0,
-      }
+        cantidad: 0,
+        precio: 0,
+      },
     };
   },
-  computed:{
-    articulosFilter(){
-      let buscar = this.buscar
-      if(buscar!=''){
-        // return this.articulos.filter((a)=>{
-        //   let nombre = a.nombre!=null?a.nombre:''
-        //   let barra = a.barra!=null?a.barra:''
-        //   return nombre.toLowerCase().indexOf(buscar.toLowerCase())!=-1 || barra.toLowerCase().indexOf(buscar.toLowerCase())!=-1
-        // })
+  computed: {
+    articulosFilter() {
+      let buscar = this.buscar;
+      if (buscar != "") {
+        return this.articulos.filter((a) => {
+          let nombre = a.nombre != null ? a.nombre : "";
+          let barra = a.barra != null ? a.barra : "";
+          return (
+            nombre.toLowerCase().indexOf(buscar.toLowerCase()) != -1 ||
+            barra.toLowerCase().indexOf(buscar.toLowerCase()) != -1
+          );
+        });
         return [];
       }
-      return this.articulos
+      return this.articulos;
     },
-    articulosMarca(){
-      let marca = this.marca
-      if(marca!='all'){
-        return this.articulosFilter.filter((a)=>{
-
-          return a.marca_id == marca
-        })
+    articulosMarca() {
+      let marca = this.marca;
+      if (marca != "all") {
+        return this.articulosFilter.filter((a) => {
+          return a.marca_id == marca;
+        });
       }
-      return this.articulosFilter
+      return this.articulosFilter;
     },
-    articulosCategoria(){
-      let categoria = this.categoria
-      if(categoria!='all'){
-        return this.articulosMarca.filter((a)=>{
-
-          return a.categoria_id == categoria
-        })
+    articulosCategoria() {
+      let categoria = this.categoria;
+      if (categoria != "all") {
+        return this.articulosMarca.filter((a) => {
+          return a.categoria_id == categoria;
+        });
       }
-      return this.articulosMarca
+      return this.articulosMarca;
     },
-    totalCarrito(){
-      return this.carrito.reduce((a,b)=> a+(b.cantidad*b.precio),0)
-    }
+    totalCarrito() {
+      return this.carrito.reduce((a, b) => a + b.cantidad * b.precio, 0);
+    },
   },
   methods: {
     async GET_DATA(path) {
@@ -438,7 +453,11 @@ export default {
     },
     async Datos() {
       try {
-        await Promise.all([this.GET_DATA('marcas'),this.GET_DATA('categorias'),this.GET_DATA('articulos')]).then((v) => {
+        await Promise.all([
+          this.GET_DATA("marcas"),
+          this.GET_DATA("categorias"),
+          this.GET_DATA("articulos"),
+        ]).then((v) => {
           this.marcas = v[0];
           this.categorias = v[1];
           this.articulos = v[2];
@@ -447,45 +466,46 @@ export default {
         console.log(e);
       }
     },
-    AddCarrito(articulo){
-      let id = articulo.id
-      let buscarRegistro = this.carrito.filter((i)=> i.articulo.id == id)
-      if(buscarRegistro.length>0){
-        let indice = this.carrito.findIndex((i)=>i.articulo.id == id)
-        this.carrito[indice].cantidad += 1
-      }else{
+    AddCarrito(articulo) {
+      let id = articulo.id;
+      let buscarRegistro = this.carrito.filter((i) => i.articulo.id == id);
+      if (buscarRegistro.length > 0) {
+        let indice = this.carrito.findIndex((i) => i.articulo.id == id);
+        this.carrito[indice].cantidad += 1;
+      } else {
         const item = {
-          articulo : articulo,
-          cantidad:1,
-          precio:articulo.compra
-        }
-        this.carrito.push(item)
-
+          articulo: articulo,
+          cantidad: 1,
+          precio: articulo.compra,
+        };
+        this.carrito.push(item);
       }
     },
-    EliminarItem(i){
-      this.carrito.splice(i,1)
+    EliminarItem(i) {
+      this.carrito.splice(i, 1);
     },
-    Codebar(){
-      let code = this.buscar
-      let buscarRegistro = this.articulosCategoria.filter((i)=> i.barra == code)
-      if(buscarRegistro.length>0){
-        this.AddCarrito(buscarRegistro[0])
-        this.buscar = ''
+    Codebar() {
+      let code = this.buscar;
+      let buscarRegistro = this.articulosCategoria.filter(
+        (i) => i.barra == code
+      );
+      if (buscarRegistro.length > 0) {
+        this.AddCarrito(buscarRegistro[0]);
+        this.buscar = "";
       }
     },
     async Save() {
       this.load = true;
-      let self = this
+      let self = this;
       try {
-       const operacion = {
+        const operacion = {
           total: this.totalCarrito,
-          tipo:1,
-          motivo:'',
-          proveedor:'PUBLICO GENERAL',
-          carrito:this.carrito
-       }
-        const res = await this.$api.$post('compras', operacion);
+          tipo: 1,
+          motivo: "",
+          proveedor: "PUBLICO GENERAL",
+          carrito: this.carrito,
+        };
+        const res = await this.$api.$post("compras", operacion);
         console.log(res);
         this.$swal
           .fire({
@@ -494,10 +514,10 @@ export default {
             showCancelButton: false,
             confirmButtonText: "Ok",
           })
-          .then( (result) => {
+          .then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              self.Clean()
+              self.Clean();
             }
           });
       } catch (e) {
@@ -506,14 +526,14 @@ export default {
         this.load = false;
       }
     },
-    Clean(){
-      this.carrito = []
-    }
+    Clean() {
+      this.carrito = [];
+    },
   },
   mounted() {
     this.$nextTick(async () => {
       try {
-        await this.Datos()
+        await this.Datos();
       } catch (e) {
         console.log(e);
       } finally {
@@ -524,9 +544,9 @@ export default {
 };
 </script>
 <style>
-  .showModal{
-    visibility: visible;
-    display:block;
-    opacity: 1 !important;
-  }
+.showModal {
+  visibility: visible;
+  display: block;
+  opacity: 1 !important;
+}
 </style>

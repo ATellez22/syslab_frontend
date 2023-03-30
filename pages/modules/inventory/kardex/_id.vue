@@ -85,6 +85,7 @@
                     </div>
                     <div class="row mt-4">
                       <div class="col-lg-12">
+                        <!-- 'data-bs-target' determina el modal que se abrirá -->
                         <button
                           class="btn bg-gradient-primary mb-0 mt-lg-auto w-100"
                           type="button"
@@ -95,6 +96,7 @@
                           <i class="fas fa-cog"></i>
                           Ajustar Stock
                         </button>
+                         <!-- Aqui empieza el Modal -->
                         <div
                           class="modal fade"
                           id="AjusteModal"
@@ -203,6 +205,7 @@
                             </div>
                           </div>
                         </div>
+                         <!-- Aqui termina el Modal -->
                       </div>
                     </div>
                   </div>
