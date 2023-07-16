@@ -2,120 +2,120 @@
   {
     "name": "configuration-articles",
     "path": "/configuration/articles",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/articles/index.vue",
     "chunkName": "pages/configuration/articles/index",
-    "_name": "_dd683648"
+    "_name": "_5342ba68"
   },
   {
     "name": "configuration-brands",
     "path": "/configuration/brands",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/brands/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/brands/index.vue",
     "chunkName": "pages/configuration/brands/index",
-    "_name": "_a2af1aaa"
+    "_name": "_772f3b37"
   },
   {
     "name": "configuration-categories",
     "path": "/configuration/categories",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/categories/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/categories/index.vue",
     "chunkName": "pages/configuration/categories/index",
-    "_name": "_27a06cfb"
+    "_name": "_47380f87"
   },
   {
     "name": "configuration-measures",
     "path": "/configuration/measures",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/measures/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/measures/index.vue",
     "chunkName": "pages/configuration/measures/index",
-    "_name": "_26298918"
+    "_name": "_a23bde00"
   },
   {
     "name": "modules-inventory",
     "path": "/modules/inventory",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/inventory/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/modules/inventory/index.vue",
     "chunkName": "pages/modules/inventory/index",
-    "_name": "_2862f3f8"
+    "_name": "_67f368f8"
   },
   {
     "name": "modules-purchase",
     "path": "/modules/purchase",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/purchase/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/modules/purchase/index.vue",
     "chunkName": "pages/modules/purchase/index",
-    "_name": "_b88bdea2"
+    "_name": "_f29a018a"
   },
   {
     "name": "modules-sale",
     "path": "/modules/sale",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/sale/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/modules/sale/index.vue",
     "chunkName": "pages/modules/sale/index",
-    "_name": "_2edc6416"
+    "_name": "_de003afe"
   },
   {
     "name": "configuration-articles-new",
     "path": "/configuration/articles/new",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/new.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/articles/new.vue",
     "chunkName": "pages/configuration/articles/new",
-    "_name": "_be8979ac"
+    "_name": "_69420bb6"
   },
   {
     "name": "configuration-brands-new",
     "path": "/configuration/brands/new",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/brands/new.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/brands/new.vue",
     "chunkName": "pages/configuration/brands/new",
-    "_name": "_67a20e8e"
+    "_name": "_56b31776"
   },
   {
     "name": "configuration-categories-new",
     "path": "/configuration/categories/new",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/categories/new.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/categories/new.vue",
     "chunkName": "pages/configuration/categories/new",
-    "_name": "_10814709"
+    "_name": "_5b0fc6d6"
   },
   {
     "name": "configuration-measures-new",
     "path": "/configuration/measures/new",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/measures/new.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/measures/new.vue",
     "chunkName": "pages/configuration/measures/new",
-    "_name": "_38ef5fc2"
-  },
-  {
-    "name": "configuration-articles-update-id",
-    "path": "/configuration/articles/update/:id?",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/articles/update/_id.vue",
-    "chunkName": "pages/configuration/articles/update/_id",
-    "_name": "_2efb6e4c"
-  },
-  {
-    "name": "configuration-brands-update-id",
-    "path": "/configuration/brands/update/:id?",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/brands/update/_id.vue",
-    "chunkName": "pages/configuration/brands/update/_id",
-    "_name": "_7d9df72a"
-  },
-  {
-    "name": "configuration-categories-update-id",
-    "path": "/configuration/categories/update/:id?",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/categories/update/_id.vue",
-    "chunkName": "pages/configuration/categories/update/_id",
-    "_name": "_6ea8fc1b"
-  },
-  {
-    "name": "configuration-measures-update-id",
-    "path": "/configuration/measures/update/:id?",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/configuration/measures/update/_id.vue",
-    "chunkName": "pages/configuration/measures/update/_id",
-    "_name": "_872d5d7c"
-  },
-  {
-    "name": "modules-inventory-kardex-id",
-    "path": "/modules/inventory/kardex/:id?",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/modules/inventory/kardex/_id.vue",
-    "chunkName": "pages/modules/inventory/kardex/_id",
-    "_name": "_42dac2b8"
+    "_name": "_0176284e"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/atellez/Escritorio/Syslab/syslab-frontend/pages/index.vue",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_7b238682"
+    "_name": "_4a7db4b3"
+  },
+  {
+    "name": "configuration-articles-update-id",
+    "path": "/configuration/articles/update/:id?",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/articles/update/_id.vue",
+    "chunkName": "pages/configuration/articles/update/_id",
+    "_name": "_576f0ace"
+  },
+  {
+    "name": "configuration-brands-update-id",
+    "path": "/configuration/brands/update/:id?",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/brands/update/_id.vue",
+    "chunkName": "pages/configuration/brands/update/_id",
+    "_name": "_d6e49942"
+  },
+  {
+    "name": "configuration-categories-update-id",
+    "path": "/configuration/categories/update/:id?",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/categories/update/_id.vue",
+    "chunkName": "pages/configuration/categories/update/_id",
+    "_name": "_5525dde2"
+  },
+  {
+    "name": "configuration-measures-update-id",
+    "path": "/configuration/measures/update/:id?",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/measures/update/_id.vue",
+    "chunkName": "pages/configuration/measures/update/_id",
+    "_name": "_2b561336"
+  },
+  {
+    "name": "modules-inventory-kardex-id",
+    "path": "/modules/inventory/kardex/:id?",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/modules/inventory/kardex/_id.vue",
+    "chunkName": "pages/modules/inventory/kardex/_id",
+    "_name": "_beed17a0"
   }
 ]

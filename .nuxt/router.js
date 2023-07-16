@@ -4,23 +4,23 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _dd683648 = () => interopDefault(import('../pages/configuration/articles/index.vue' /* webpackChunkName: "pages/configuration/articles/index" */))
-const _a2af1aaa = () => interopDefault(import('../pages/configuration/brands/index.vue' /* webpackChunkName: "pages/configuration/brands/index" */))
-const _27a06cfb = () => interopDefault(import('../pages/configuration/categories/index.vue' /* webpackChunkName: "pages/configuration/categories/index" */))
-const _26298918 = () => interopDefault(import('../pages/configuration/measures/index.vue' /* webpackChunkName: "pages/configuration/measures/index" */))
-const _2862f3f8 = () => interopDefault(import('../pages/modules/inventory/index.vue' /* webpackChunkName: "pages/modules/inventory/index" */))
-const _b88bdea2 = () => interopDefault(import('../pages/modules/purchase/index.vue' /* webpackChunkName: "pages/modules/purchase/index" */))
-const _2edc6416 = () => interopDefault(import('../pages/modules/sale/index.vue' /* webpackChunkName: "pages/modules/sale/index" */))
-const _be8979ac = () => interopDefault(import('../pages/configuration/articles/new.vue' /* webpackChunkName: "pages/configuration/articles/new" */))
-const _67a20e8e = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
-const _10814709 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
-const _38ef5fc2 = () => interopDefault(import('../pages/configuration/measures/new.vue' /* webpackChunkName: "pages/configuration/measures/new" */))
-const _2efb6e4c = () => interopDefault(import('../pages/configuration/articles/update/_id.vue' /* webpackChunkName: "pages/configuration/articles/update/_id" */))
-const _7d9df72a = () => interopDefault(import('../pages/configuration/brands/update/_id.vue' /* webpackChunkName: "pages/configuration/brands/update/_id" */))
-const _6ea8fc1b = () => interopDefault(import('../pages/configuration/categories/update/_id.vue' /* webpackChunkName: "pages/configuration/categories/update/_id" */))
-const _872d5d7c = () => interopDefault(import('../pages/configuration/measures/update/_id.vue' /* webpackChunkName: "pages/configuration/measures/update/_id" */))
-const _42dac2b8 = () => interopDefault(import('../pages/modules/inventory/kardex/_id.vue' /* webpackChunkName: "pages/modules/inventory/kardex/_id" */))
-const _7b238682 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _5342ba68 = () => interopDefault(import('../pages/configuration/articles/index.vue' /* webpackChunkName: "pages/configuration/articles/index" */))
+const _772f3b37 = () => interopDefault(import('../pages/configuration/brands/index.vue' /* webpackChunkName: "pages/configuration/brands/index" */))
+const _47380f87 = () => interopDefault(import('../pages/configuration/categories/index.vue' /* webpackChunkName: "pages/configuration/categories/index" */))
+const _a23bde00 = () => interopDefault(import('../pages/configuration/measures/index.vue' /* webpackChunkName: "pages/configuration/measures/index" */))
+const _67f368f8 = () => interopDefault(import('../pages/modules/inventory/index.vue' /* webpackChunkName: "pages/modules/inventory/index" */))
+const _f29a018a = () => interopDefault(import('../pages/modules/purchase/index.vue' /* webpackChunkName: "pages/modules/purchase/index" */))
+const _de003afe = () => interopDefault(import('../pages/modules/sale/index.vue' /* webpackChunkName: "pages/modules/sale/index" */))
+const _69420bb6 = () => interopDefault(import('../pages/configuration/articles/new.vue' /* webpackChunkName: "pages/configuration/articles/new" */))
+const _56b31776 = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
+const _5b0fc6d6 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
+const _0176284e = () => interopDefault(import('../pages/configuration/measures/new.vue' /* webpackChunkName: "pages/configuration/measures/new" */))
+const _4a7db4b3 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _576f0ace = () => interopDefault(import('../pages/configuration/articles/update/_id.vue' /* webpackChunkName: "pages/configuration/articles/update/_id" */))
+const _d6e49942 = () => interopDefault(import('../pages/configuration/brands/update/_id.vue' /* webpackChunkName: "pages/configuration/brands/update/_id" */))
+const _5525dde2 = () => interopDefault(import('../pages/configuration/categories/update/_id.vue' /* webpackChunkName: "pages/configuration/categories/update/_id" */))
+const _2b561336 = () => interopDefault(import('../pages/configuration/measures/update/_id.vue' /* webpackChunkName: "pages/configuration/measures/update/_id" */))
+const _beed17a0 = () => interopDefault(import('../pages/modules/inventory/kardex/_id.vue' /* webpackChunkName: "pages/modules/inventory/kardex/_id" */))
 
 const emptyFn = () => {}
 
@@ -35,72 +35,72 @@ export const routerOptions = {
 
   routes: [{
     path: "/configuration/articles",
-    component: _dd683648,
+    component: _5342ba68,
     name: "configuration-articles"
   }, {
     path: "/configuration/brands",
-    component: _a2af1aaa,
+    component: _772f3b37,
     name: "configuration-brands"
   }, {
     path: "/configuration/categories",
-    component: _27a06cfb,
+    component: _47380f87,
     name: "configuration-categories"
   }, {
     path: "/configuration/measures",
-    component: _26298918,
+    component: _a23bde00,
     name: "configuration-measures"
   }, {
     path: "/modules/inventory",
-    component: _2862f3f8,
+    component: _67f368f8,
     name: "modules-inventory"
   }, {
     path: "/modules/purchase",
-    component: _b88bdea2,
+    component: _f29a018a,
     name: "modules-purchase"
   }, {
     path: "/modules/sale",
-    component: _2edc6416,
+    component: _de003afe,
     name: "modules-sale"
   }, {
     path: "/configuration/articles/new",
-    component: _be8979ac,
+    component: _69420bb6,
     name: "configuration-articles-new"
   }, {
     path: "/configuration/brands/new",
-    component: _67a20e8e,
+    component: _56b31776,
     name: "configuration-brands-new"
   }, {
     path: "/configuration/categories/new",
-    component: _10814709,
+    component: _5b0fc6d6,
     name: "configuration-categories-new"
   }, {
     path: "/configuration/measures/new",
-    component: _38ef5fc2,
+    component: _0176284e,
     name: "configuration-measures-new"
   }, {
+    path: "/",
+    component: _4a7db4b3,
+    name: "index"
+  }, {
     path: "/configuration/articles/update/:id?",
-    component: _2efb6e4c,
+    component: _576f0ace,
     name: "configuration-articles-update-id"
   }, {
     path: "/configuration/brands/update/:id?",
-    component: _7d9df72a,
+    component: _d6e49942,
     name: "configuration-brands-update-id"
   }, {
     path: "/configuration/categories/update/:id?",
-    component: _6ea8fc1b,
+    component: _5525dde2,
     name: "configuration-categories-update-id"
   }, {
     path: "/configuration/measures/update/:id?",
-    component: _872d5d7c,
+    component: _2b561336,
     name: "configuration-measures-update-id"
   }, {
     path: "/modules/inventory/kardex/:id?",
-    component: _42dac2b8,
+    component: _beed17a0,
     name: "modules-inventory-kardex-id"
-  }, {
-    path: "/",
-    component: _7b238682,
-    name: "index"
   }],
 
   fallback: false
