@@ -85,7 +85,7 @@ export default {
             }
           });
       } catch (error) {
-        console.log(e);
+        console.log(error);
       } finally {
         //Deshabilitar carga de pagina
         this.load = false;

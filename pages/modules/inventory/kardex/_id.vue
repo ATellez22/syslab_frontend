@@ -367,12 +367,15 @@ export default {
     //------------------------------Guardar--------------------------------------//
 
     async Save() {
+
       //Habilitar carga de pagina
       this.load = true;
       let self = this;
+
       try {
         //Asignar valores propios de 'model' a 'inventory', para poder guardarlos.
         //Inventory.sale, hace referencia a la columna 'sale' de inventories
+
         this.inventory.article_id = this.model.id;
         this.inventory.sale = this.model.price;
         this.inventory.purchase = this.model.purchase_price;
@@ -385,7 +388,7 @@ export default {
           Se instala con 'npm install -S vue-sweetalert2'
           Se configura en el nuxt.config añadiendo en modules: 'vue-sweetalert2/nuxt'
         */
-
+        console.log(res);
         this.$swal
           .fire({
             title: "Movimiento Guardado",
@@ -410,7 +413,7 @@ export default {
             }
           });
       } catch (error) {
-        document.write(error);
+        console.log(error);
       } finally {
         //Deshabilitar carga de pagina
         this.load = false;

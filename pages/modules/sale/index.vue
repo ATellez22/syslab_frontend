@@ -391,20 +391,20 @@ export default {
       modulo: "Nueva compra",
       page: "Compras",
       buscar: "",
-      marca: "all",
-      categoria: "all",
+      brand: "all",
+      category: "all",
       load: true,
       modalEdit: false,
       articulos: [],
-      marcas: [],
-      categorias: [],
+      brands: [],
+      categories: [],
       carrito: [],
       item: {
-        articulo: {
+        article: {
           nombre: "",
         },
-        cantidad: 0,
-        precio: 0,
+        quantity: 0,
+        price: 0,
       },
     };
   },
@@ -412,7 +412,7 @@ export default {
     articulosFilter() {
       let buscar = this.buscar;
       if (buscar != "") {
-        return this.articulos.filter((a) => {
+        return this.articles.filter((a) => {
           let nombre = a.nombre != null ? a.nombre : "";
           let barra = a.barra != null ? a.barra : "";
           return (
@@ -454,9 +454,9 @@ export default {
     async Datos() {
       try {
         await Promise.all([
-          this.GET_DATA("marcas"),
-          this.GET_DATA("categorias"),
-          this.GET_DATA("articulos"),
+          this.GET_DATA("brands"),
+          this.GET_DATA("categories"),
+          this.GET_DATA("articles"),
         ]).then((v) => {
           this.marcas = v[0];
           this.categorias = v[1];

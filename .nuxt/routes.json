@@ -49,6 +49,13 @@
     "_name": "_de003afe"
   },
   {
+    "name": "users-users",
+    "path": "/users/users",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/users/users/index.vue",
+    "chunkName": "pages/users/users/index",
+    "_name": "_6d5f31e5"
+  },
+  {
     "name": "configuration-articles-new",
     "path": "/configuration/articles/new",
     "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/articles/new.vue",
@@ -75,6 +82,20 @@
     "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/configuration/measures/new.vue",
     "chunkName": "pages/configuration/measures/new",
     "_name": "_0176284e"
+  },
+  {
+    "name": "modules-auth-login",
+    "path": "/modules/auth/login",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/modules/auth/login.vue",
+    "chunkName": "pages/modules/auth/login",
+    "_name": "_17871db9"
+  },
+  {
+    "name": "users-users-new",
+    "path": "/users/users/new",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/users/users/new.vue",
+    "chunkName": "pages/users/users/new",
+    "_name": "_42203e73"
   },
   {
     "name": "index",
@@ -117,5 +138,12 @@
     "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/modules/inventory/kardex/_id.vue",
     "chunkName": "pages/modules/inventory/kardex/_id",
     "_name": "_beed17a0"
+  },
+  {
+    "name": "users-users-update-id",
+    "path": "/users/users/update/:id?",
+    "component": "/home/atellez/Escritorio/Programacion/syslab_frontend/pages/users/users/update/_id.vue",
+    "chunkName": "pages/users/users/update/_id",
+    "_name": "_14d2b971"
   }
 ]

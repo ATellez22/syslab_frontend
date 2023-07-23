@@ -11,16 +11,20 @@ const _a23bde00 = () => interopDefault(import('../pages/configuration/measures/i
 const _67f368f8 = () => interopDefault(import('../pages/modules/inventory/index.vue' /* webpackChunkName: "pages/modules/inventory/index" */))
 const _f29a018a = () => interopDefault(import('../pages/modules/purchase/index.vue' /* webpackChunkName: "pages/modules/purchase/index" */))
 const _de003afe = () => interopDefault(import('../pages/modules/sale/index.vue' /* webpackChunkName: "pages/modules/sale/index" */))
+const _6d5f31e5 = () => interopDefault(import('../pages/users/users/index.vue' /* webpackChunkName: "pages/users/users/index" */))
 const _69420bb6 = () => interopDefault(import('../pages/configuration/articles/new.vue' /* webpackChunkName: "pages/configuration/articles/new" */))
 const _56b31776 = () => interopDefault(import('../pages/configuration/brands/new.vue' /* webpackChunkName: "pages/configuration/brands/new" */))
 const _5b0fc6d6 = () => interopDefault(import('../pages/configuration/categories/new.vue' /* webpackChunkName: "pages/configuration/categories/new" */))
 const _0176284e = () => interopDefault(import('../pages/configuration/measures/new.vue' /* webpackChunkName: "pages/configuration/measures/new" */))
+const _17871db9 = () => interopDefault(import('../pages/modules/auth/login.vue' /* webpackChunkName: "pages/modules/auth/login" */))
+const _42203e73 = () => interopDefault(import('../pages/users/users/new.vue' /* webpackChunkName: "pages/users/users/new" */))
 const _4a7db4b3 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _576f0ace = () => interopDefault(import('../pages/configuration/articles/update/_id.vue' /* webpackChunkName: "pages/configuration/articles/update/_id" */))
 const _d6e49942 = () => interopDefault(import('../pages/configuration/brands/update/_id.vue' /* webpackChunkName: "pages/configuration/brands/update/_id" */))
 const _5525dde2 = () => interopDefault(import('../pages/configuration/categories/update/_id.vue' /* webpackChunkName: "pages/configuration/categories/update/_id" */))
 const _2b561336 = () => interopDefault(import('../pages/configuration/measures/update/_id.vue' /* webpackChunkName: "pages/configuration/measures/update/_id" */))
 const _beed17a0 = () => interopDefault(import('../pages/modules/inventory/kardex/_id.vue' /* webpackChunkName: "pages/modules/inventory/kardex/_id" */))
+const _14d2b971 = () => interopDefault(import('../pages/users/users/update/_id.vue' /* webpackChunkName: "pages/users/users/update/_id" */))
 
 const emptyFn = () => {}
 
@@ -62,6 +66,10 @@ export const routerOptions = {
     component: _de003afe,
     name: "modules-sale"
   }, {
+    path: "/users/users",
+    component: _6d5f31e5,
+    name: "users-users"
+  }, {
     path: "/configuration/articles/new",
     component: _69420bb6,
     name: "configuration-articles-new"
@@ -77,6 +85,14 @@ export const routerOptions = {
     path: "/configuration/measures/new",
     component: _0176284e,
     name: "configuration-measures-new"
+  }, {
+    path: "/modules/auth/login",
+    component: _17871db9,
+    name: "modules-auth-login"
+  }, {
+    path: "/users/users/new",
+    component: _42203e73,
+    name: "users-users-new"
   }, {
     path: "/",
     component: _4a7db4b3,
@@ -101,6 +117,10 @@ export const routerOptions = {
     path: "/modules/inventory/kardex/:id?",
     component: _beed17a0,
     name: "modules-inventory-kardex-id"
+  }, {
+    path: "/users/users/update/:id?",
+    component: _14d2b971,
+    name: "users-users-update-id"
   }],
 
   fallback: false

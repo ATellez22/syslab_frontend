@@ -25,6 +25,8 @@
        >
          <ul class="navbar-nav">
 
+           <!----------------------------------------------------------------------------------->
+
            <li class="nav-item mt-3">
              <h6
                class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6"
@@ -88,6 +90,15 @@
              </a>
              <div class="collapse" id="configuracion">
                <ul class="nav ms-4 ps-3">
+                <li class="nav-item">
+                   <nuxtLink
+                     class="nav-link"
+                     to="/users/users"
+                   >
+                     <span class="sidenav-mini-icon"> U </span>
+                     <span class="sidenav-normal"> Usuarios </span>
+                   </nuxtLink>
+                 </li>
 
                  <li class="nav-item">
                    <nuxtLink
@@ -127,7 +138,11 @@
                  </li>
                </ul>
              </div>
+
            </li>
+
+          <!----------------------------------------------------------------------------------->
+
            <li class="nav-item mt-3">
              <h6
                class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6"
@@ -205,6 +220,8 @@
                </ul>
              </div>
            </li>
+
+            <!----------------------------------------------------------------------------------->
 
            <li class="nav-item mt-3">
              <h6
